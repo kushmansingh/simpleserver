@@ -1,8 +1,8 @@
-FROM golang:1.7-alpine
+FROM golang:1.10
 
 EXPOSE 80
-COPY main.go /go/src/simple-server/
 WORKDIR /go/src/simple-server/
+COPY main.go /go/src/simple-server/
 RUN go install
 
-ENTRYPOINT /go/bin/simple-server
+ENTRYPOINT ["/go/bin/simple-server"]
